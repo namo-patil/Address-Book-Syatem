@@ -7,7 +7,7 @@ public class Contact {
     private String city;
     private String state;
     private int zipCode;
-    private int phoneNumber;
+    private long phoneNumber;
     private String email;
 
     public Contact() {
@@ -62,11 +62,11 @@ public class Contact {
         this.zipCode = zipCode;
     }
 
-    public int getPhoneNumber() {
+    public long getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(long phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -76,5 +76,12 @@ public class Contact {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String toString() {
+
+        return "Contact [FirstName=" + firstName + ", LastName=" + lastName + ", Address=" + address + ", " +
+                "City=" + city + ", State=" + state + ", ZipCode=" + zipCode + ", PhoneNumber=" + phoneNumber + ", " +
+                "Email=" + email + "]";
     }
 }
