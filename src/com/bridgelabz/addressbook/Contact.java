@@ -54,6 +54,14 @@ public class Contact {
         this.state = state;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public int getZipCode() {
         return zipCode;
     }
@@ -70,18 +78,10 @@ public class Contact {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String toString() {
 
         return "Contact [FirstName=" + firstName + ", LastName=" + lastName + ", Address=" + address + ", " +
-                "City=" + city + ", State=" + state + ", ZipCode=" + zipCode + ", PhoneNumber=" + phoneNumber + ", " +
-                "Email=" + email + "]";
+                "City=" + city + ", State=" + state + ", Email=" + email + ", ZipCode=" + zipCode +
+                ", PhoneNumber=" + phoneNumber + "]";
     }
 }
