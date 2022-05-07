@@ -54,8 +54,23 @@ public class AddressBookImpl implements AddressBook {
         if (editName.equalsIgnoreCase(contact.getFirstName())) {
             addContact();
         } else {
+            //System.out.println();
             System.out.println("Please Enter Valid First Name of a Person,");
             editContact();
+        }
+    }
+
+    @Override
+    public void deleteContact() {
+        System.out.println("-----------DELETING PERSON DETAILS------------");
+        System.out.println("Enter first name :");
+        String firstName = scanner.nextLine();
+        if (firstName.equalsIgnoreCase(contact.getFirstName())) {
+            System.out.println("Contact Details for " + contact.getFirstName() + " is Deleted Successfully.");
+            contact = null;
+        } else {
+            System.out.println("Please Enter Valid First Name of a Person,");
+            deleteContact();
         }
     }
 }
