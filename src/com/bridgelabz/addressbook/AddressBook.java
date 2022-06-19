@@ -1,7 +1,12 @@
 package com.bridgelabz.addressbook;
 
+import java.util.List;
+
 public interface AddressBook {
-    void addContact();
-    void editContact();
-    void deleteContact();
+
+    public Contact addPerson();
+    public List<Contact> editContact();
+    public List<Contact> deleteContact();
+    void displayList();
+
 }

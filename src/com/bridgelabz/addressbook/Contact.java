@@ -1,5 +1,7 @@
 package com.bridgelabz.addressbook;
 
+import java.util.Objects;
+
 public class Contact {
     private String firstName;
     private String lastName;
@@ -12,6 +14,17 @@ public class Contact {
 
     public Contact() {
 
+    }
+
+    public Contact(String firstName, String lastName, String address, String city, String state, int zipCode, long phoneNumber, String email) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.city = city;
+        this.state = state;
+        this.zipCode = zipCode;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
     }
 
     public String getFirstName() {
@@ -78,10 +91,31 @@ public class Contact {
         this.phoneNumber = phoneNumber;
     }
 
-    public String toString() {
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        Contact contact = (Contact) o;
+        return zipCode == contact.zipCode && phoneNumber == contact.phoneNumber && firstName.equals(contact.firstName)
+                          && lastName.equals(contact.lastName) && address.equals(contact.address) && city.equals(contact.city)
+                          && state.equals(contact.state) && email.equals(contact.email);
+                }
 
-        return "Contact [FirstName=" + firstName + ", LastName=" + lastName + ", Address=" + address + ", " +
-                "City=" + city + ", State=" + state + ", Email=" + email + ", ZipCode=" + zipCode +
-                ", PhoneNumber=" + phoneNumber + "]";
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstName, lastName, address, city, state, zipCode, phoneNumber, email);
+    }
+
+    @Override
+    public String toString() {
+        return "Contact{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", address='" + address + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", zipCode=" + zipCode +
+                ", phoneNumber=" + phoneNumber +
+                ", email='" + email + '\'' +
+                '}';
     }
 }
